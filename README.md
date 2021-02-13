@@ -69,7 +69,9 @@ FROM mentorship_eigibility
 ORDER BY det.count
 
 
+
 Query used to get the number of employees ready for the mentorship by titles by department:
+
 
 SELECT me.title, de.dept_no, count(me.emp_no) AS count
 
