@@ -46,7 +46,8 @@ Are there enough qualified, retirement-ready employees in the departments to men
 
 Query used to get the number of employees ready for the mentorship by titles:
 
-
+-
+ 
 SELECT * FROM 
 
 (
@@ -67,8 +68,9 @@ FROM mentorship_eigibility
 
 ORDER BY det.count
 
+-
 
-
+-
 Query used to get the number of employees ready for the mentorship by titles by department:
 
 SELECT me.title, de.dept_no, count(me.emp_no) AS count
@@ -82,6 +84,7 @@ ON (me.emp_no = de.emp_no AND me.to_date = de.to_date)
 GROUP BY me.title, de.dept_no
 
 ORDER BY count DESC
+-
 
 
 O/P:
@@ -91,6 +94,8 @@ O/P:
 
 2.	Similarly, table can be prepared for the employees getting retired by department and by title. 
 We can prepare table using unique_table we created in deliverable#2, but unfortunately we have not taken the to_date field which is required to avoid duplicity of emp_no in joined table. 
+
+-
 
 SELECT ut.title, de.dept_no, count(ut.emp_no) AS count
 
@@ -103,5 +108,6 @@ ON (ut.emp_no = de.emp_no  AND ut.to_date = de.to_date)
 GROUP BY ut.title, de.dept_no
 
 ORDER BY count DESC
+-
 
 
